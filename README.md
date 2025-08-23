@@ -10,31 +10,30 @@ The system recommends movies based on **genre, cast, director, production house,
 ![EDA](ml/recommendation6.png)
 
 Create a virtual environment and activate it:
-
+<pre> 
 python -m venv venv
 source venv/bin/activate.fish   #In linux
-
+</pre>
 
 Install dependencies:
-
+<pre> 
 pip install -r requirements.txt
-
+</pre>
 
 Run FastAPI:
-
+<pre> 
 uvicorn main:app --reload
-
-Frontend:
+</pre>
 
 Navigate to frontend/ folder:
-
+<pre> 
 cd frontend
-
+</pre>
 
 Install npm dependencies:
-
+<pre>
 npm install
-
+</pre>
 
 Run development server:
 <pre>
