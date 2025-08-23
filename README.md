@@ -37,9 +37,9 @@ npm install
 
 
 Run development server:
-```bash
+<pre>
 npm run dev
-
+</pre>
 Features:
 
 Search Movies – Users can search for Nepali movies by typing the title in the search bar.
