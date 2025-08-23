@@ -7,51 +7,16 @@ The system recommends movies based on **genre, cast, director, production house,
 
 ## 🗂 Project Structure
 
-asd/
-├── backend/
-│   ├── __init__.py
-│   ├── auth.py
-│   ├── database.py
-│   ├── main.py
-│   ├── models.py
-│   ├── movies.csv
-│   ├── recommendation.py
-│   ├── requirements.txt
-│   ├── test.db
-│   └── __pycache__/
-│       ├── __init__.cpython-313.pyc
-│       ├── auth.cpython-313.pyc
-│       ├── database.cpython-313.pyc
-│       ├── main.cpython-313.pyc
-│       ├── models.cpython-313.pyc
-│       └── ...
-├── frontend/
-│   ├── .gitignore
-│   ├── eslint.config.js
-│   ├── index.html
-│   ├── package.json
-│   ├── README.md
-│   ├── tsconfig.app.json
-│   ├── tsconfig.json
-│   ├── tsconfig.node.json
-│   ├── vite.config.ts
-│   ├── public/
-│   │   └── vite.svg
-│   └── src/
-│       └── ...
-├── ml/
-│   ├── movierecommendation.ipynb
-│   └── .ipynb_checkpoints/
-
+![EDA](ml/recommendation4.png)
 
 Features:
 
 Search Movies – Users can search for Nepali movies by typing the title in the search bar.
-![EDA](ml/recommendation4.png)
+![EDA](ml/recommendation6.png)
 
 Autocomplete Suggestions – Shows matching movie titles as you type for faster selection.
 
-Top 5 Recommendations – Provides top 5 similar movies based on genre, cast, director, production house, and plot.
+Top 10 Recommendations – Provides top 10 similar movies based on genre, cast, director, production house, and plot.
 
 Detailed Movie Info – Each recommended movie displays:
 
@@ -72,9 +37,12 @@ Plot Summary
 Image and Video URL (if available)
 
 User Authentication – Secure access using JWT-based login and registration.
+![EDA](ml/recomendation3.png)
+![EDA](ml/recommendation2.png)
 
 Default Handling – Automatically handles missing values like images or production house info.
 
 Responsive Frontend – Mobile-friendly React/TypeScript interface with TailwindCSS.
+![EDA](ml/recommendation5.png)
 
 Data-Driven Recommendations – Uses content-based filtering with cosine similarity for relevant suggestions.
