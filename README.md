@@ -47,7 +47,7 @@ asd/
 Features:
 
 Search Movies – Users can search for Nepali movies by typing the title in the search bar.
-![EDA](ML/recommendation4.png)
+![EDA](ml/recommendation4.png)
 
 Autocomplete Suggestions – Shows matching movie titles as you type for faster selection.
 
