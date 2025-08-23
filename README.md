@@ -9,6 +9,37 @@ The system recommends movies based on **genre, cast, director, production house,
 
 ![EDA](ml/recommendation4.png)
 
+Create a virtual environment and activate it:
+
+python -m venv venv
+source venv/bin/activate.fish   #In linux
+
+
+Install dependencies:
+
+pip install -r requirements.txt
+
+
+Run FastAPI:
+
+uvicorn main:app --reload
+
+Frontend:
+
+Navigate to frontend/ folder:
+
+cd frontend
+
+
+Install npm dependencies:
+
+npm install
+
+
+Run development server:
+
+npm run dev
+
 Features:
 
 Search Movies – Users can search for Nepali movies by typing the title in the search bar.
