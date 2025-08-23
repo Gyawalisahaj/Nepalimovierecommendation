@@ -7,7 +7,7 @@ The system recommends movies based on **genre, cast, director, production house,
 
 ## 🗂 Project Structure
 
-![EDA](ml/recommendation4.png)
+![EDA](ml/recommendation6.png)
 
 Create a virtual environment and activate it:
 
@@ -43,7 +43,7 @@ npm run dev
 Features:
 
 Search Movies – Users can search for Nepali movies by typing the title in the search bar.
-![EDA](ml/recommendation6.png)
+![EDA](ml/recommendation4.png)
 
 Autocomplete Suggestions – Shows matching movie titles as you type for faster selection.
 
