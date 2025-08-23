@@ -58,7 +58,7 @@ def recommend(
         raise HTTPException(status_code=404, detail=f"Movie '{movie}' not found")
 
     distances = similarity[index]
-    top_similar = sorted(list(enumerate(distances)), reverse=True, key=lambda x: x[1])[1:6]
+    top_similar = sorted(list(enumerate(distances)), reverse=True, key=lambda x: x[1])[1:11]
 
     recommendations = []
     for i in top_similar:
@@ -76,7 +76,20 @@ def recommend(
             "video_url": row['Movie URL'] if 'Movie URL' in df.columns and pd.notna(row['Movie URL']) else None,
         })
 
+        current_movie = df.iloc[index]
+        current_movie_info = {
+        "title": current_movie['Title'],
+        "genre": current_movie['Genre'],
+        "cast": current_movie['Cast'],
+        "director": current_movie['Director'],
+        "production_house": current_movie['Production House'] if 'Production House' in df.columns else None,
+        "release_date": current_movie['Release Dates'] if 'Release Dates' in df.columns else None,
+        "plot": current_movie['Plot'],
+        "image_url": current_movie['Image URL'] if 'Image URL' in df.columns and pd.notna(current_movie['Image URL']) else "https://cdn.simplystamps.com/media/catalog/product/5/8/5802-n-a-stock-stamp-hcb.png",
+        "video_url": current_movie['Movie URL'] if 'Movie URL' in df.columns and pd.notna(current_movie['Movie URL']) else None,
+        }
+
     return {
-        "movie": movie,
+        "current_movie": current_movie_info, 
         "recommendations": recommendations
     }

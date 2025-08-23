@@ -1,5 +1,6 @@
 import { useEffect,useRef, useState } from "react";
 import MovieCard from "./card";
+import MovieList from "./movies";  
 
 type Movie = {
   title: string;
@@ -15,6 +16,7 @@ type Movie = {
 
 export default function HomePage() {
   const [recommendations, setRecommendations] = useState<Movie[]>([]);
+  const [current_Movie, setCurrentMovie] = useState<Movie | null>(null);
   const [movieName, setMovieName] = useState("Mahabhoj");
   const [suggestions, setSuggestions] = useState<string[]>([]);
   const [allTitles, setAllTitles] = useState<string[]>([]);
@@ -58,6 +60,7 @@ export default function HomePage() {
       }
 
       const data = await res.json();
+      setCurrentMovie(data.current_movie || null);
       setRecommendations(data.recommendations);
     } catch (err: any) {
       setError(err.message || "Unknown error");
@@ -151,9 +154,16 @@ export default function HomePage() {
       {loading && <p className="text-orange-700">Loading...</p>}
       {error && <p className="text-red-600">{error}</p>}
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6">
+      {current_Movie && (
+        <div className="mt-6 w-screen  max-w-7xl">
+          <h2 className="text-2xl font-semibold text-orange-700 mb-2">Current Movie</h2>
+          <MovieCard movie={current_Movie} />
+        </div>
+      )}
+
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mt-6">
         {recommendations.map((movie) => (
-          <MovieCard key={movie.title} movie={movie} />
+          <MovieList key={movie.title} movie={movie} />
         ))}
       </div>
     </div>
