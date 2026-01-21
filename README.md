@@ -2,7 +2,6 @@
 
 A professional, full-stack **content-based movie recommendation system** built with **FastAPI** backend and **Streamlit** frontend. The system recommends movies based on **genre, cast, director, production house, and plot** using intelligent similarity algorithms.
 
-**Perfect for:** Portfolio projects, placement interviews, AI/ML demonstrations
 
 ---
 
