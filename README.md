@@ -13,10 +13,6 @@ A professional, full-stack **content-based movie recommendation system** built w
 🔍 **Smart Search** – Movie dropdown with complete database access  
 📊 **Live API Integration** – Real-time backend communication  
 💡 **Well-Documented** – Jupyter notebooks for ML algorithm explanation  
-🚀 **Production-Ready** – Professional FastAPI backend with error handling  
-📈 **Interview-Ready** – ML model analysis notebook included
-
----
 
 ## 🗂️ Project Structure
 
@@ -234,7 +230,6 @@ GET http://127.0.0.1:8000/recommend/?movie=Inception&limit=10
 | Technology | Purpose | Version |
 |-----------|---------|---------|
 | **FastAPI** | Web framework | Latest |
-| **SQLAlchemy** | ORM database | 2.x |
 | **Pandas** | Data processing | 1.x |
 | **scikit-learn** | ML algorithms | 1.x |
 | **Uvicorn** | ASGI server | Latest |
@@ -246,11 +241,6 @@ GET http://127.0.0.1:8000/recommend/?movie=Inception&limit=10
 | **Requests** | HTTP client | 2.x |
 | **Python** | Runtime | 3.8+ |
 
-### Database
-| Technology | Purpose |
-|-----------|---------|
-| **SQLite** | Data storage |
-| **SQLAlchemy** | ORM |
 
 ---
 
@@ -314,27 +304,6 @@ Navigate to: **http://localhost:8501**
 
 ---
 
-## 🎯 Use Cases
-
-### For Interviews
-- Demonstrate full-stack development skills
-- Explain ML algorithm with Jupyter notebook
-- Show professional code architecture
-- Display DevOps understanding (port management, process handling)
-
-### For Portfolio
-- Include in GitHub portfolio
-- Deploy to cloud (Heroku, AWS, etc.)
-- Showcase to employers
-- Collaborate with team members
-
-### For Learning
-- Understand content-based recommendation systems
-- Learn FastAPI best practices
-- Explore Streamlit framework
-- Study ML pipeline implementation
-
----
 
 ## 🐛 Troubleshooting
 
@@ -394,21 +363,6 @@ pip install -r backend/requirements.txt
 ### For Frontend Development
 - Streamlit documentation: https://docs.streamlit.io
 - Python requests library: https://requests.readthedocs.io
-
----
-
-## 🎓 What You'll Learn
-
-✅ **Full-Stack Architecture** – Backend + Frontend + Database  
-✅ **ML Integration** – Recommendation systems from scratch  
-✅ **FastAPI** – Modern Python web framework  
-✅ **Streamlit** – Rapid web app development  
-✅ **Content-Based Filtering** – ML algorithms for recommendations  
-✅ **TF-IDF & Cosine Similarity** – Text vectorization techniques  
-✅ **RESTful APIs** – Proper endpoint design  
-✅ **Data Processing** – Pandas for data manipulation  
-✅ **Database Design** – SQLite with SQLAlchemy ORM  
-✅ **Professional Development** – Code structure, error handling, documentation  
 
 ---
 
