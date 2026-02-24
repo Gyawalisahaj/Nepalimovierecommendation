@@ -42,7 +42,6 @@ origins = [
     "http://127.0.0.1",
     "http://localhost:8501",
     "http://127.0.0.1:8501",
-    "https://nepalimovierecommendation-4o7x9hxvdnveqp8r92aqux.streamlit.app/",
     "*",
 ]
 
