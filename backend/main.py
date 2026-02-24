@@ -23,9 +23,15 @@ from recommendation import router as recommend_router
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# Initialize database tables
-Base.metadata.create_all(bind=engine)
-logger.info("Database initialized successfully")
+# Initialize database tables (may be no‑op if using memory db or
+# if the engine cannot connect).  Errors during initialization are
+# logged but do not stop the application, because the current API
+# does not depend on persisted data.
+try:
+    Base.metadata.create_all(bind=engine)
+    logger.info("Database initialized successfully")
+except Exception as exc:
+    logger.warning(f"Database initialization failed: {exc}")
 
 # Create FastAPI application with metadata
 app = FastAPI(
