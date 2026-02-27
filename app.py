@@ -168,6 +168,8 @@ try:
                 with st.expander("🎭 Cast"):
                     st.write(movie.get("cast", "N/A"))
                 
+                if movie.get("video_url"):
+                    st.markdown(f"[▶️ Watch Movie]({movie['video_url']}) 🎥")
         st.divider()
 
 
@@ -204,6 +206,12 @@ try:
                         
                         with st.expander("🎭 Cast"):
                             st.caption(movie.get("cast", "N/A"))
+                        
+                        if movie.get("video_url"):
+                            st.markdown(
+                                f"[▶️ Watch]({movie['video_url']})",
+                                unsafe_allow_html=False
+                            )
     else:
         st.warning("⚠️ No movies available in the database")
         
