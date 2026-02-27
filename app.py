@@ -101,6 +101,17 @@ try:
         
         st.divider()
         
+        st.header("⚙️ Configuration")
+        num_recommendations = st.slider(
+        "Number of Recommendations",
+        min_value=1,
+        max_value=20,
+        value=10,
+        step=1
+        )
+    
+        st.divider()
+        
         # Get recommendations
         if search_button or selected_movie != st.session_state.selected_movie:
             st.session_state.selected_movie = selected_movie
@@ -157,17 +168,6 @@ try:
                 
                 if movie.get("video_url"):
                     st.markdown(f"[▶️ Watch Movie]({movie['video_url']}) 🎥")
-        st.divider()
-    
-        st.header("⚙️ Configuration")
-        num_recommendations = st.slider(
-        "Number of Recommendations",
-        min_value=1,
-        max_value=20,
-        value=10,
-        step=1
-        )
-    
         st.divider()
 
 
