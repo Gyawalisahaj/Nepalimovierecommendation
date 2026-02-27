@@ -122,7 +122,7 @@ Navigate to: **http://localhost:8501**
 **Recommendations Display:**
 ![Recommendations](./screenshot/recommendation2.png)
 
-**ML Model (For Interviews):**
+**ML Model:**
 ![ML Algorithm](./screenshot/recommended_model.png)
 
 ---
