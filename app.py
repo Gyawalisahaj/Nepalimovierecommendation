@@ -96,7 +96,7 @@ try:
         
         with col1:
             selected_movie = st.selectbox(
-                "📽️ Select a movie to get recommendations:",
+                " Select a movie to get recommendations:",
                 options=sorted(all_titles),
                 key="movie_selector"
             )
@@ -253,6 +253,9 @@ with st.container():
     st.divider()
 
     st.markdown(
-        "<center>MovieFlix** © 2026 | A ML Project by Sahaj Gyawali | [GitHub](https://github.com/Gyawalisahaj/Nepalimovierecommendation)</center>",
-        unsafe_allow_html=True
-    )
+    "<center><b>MovieFlix</b> © 2026 | A Machine Learning Project by Sahaj Gyawali | "
+    "<a href='https://github.com/Gyawalisahaj/Nepalimovierecommendation' target='_blank'>GitHub</a></center>",
+    unsafe_allow_html=True
+   )
+
+
