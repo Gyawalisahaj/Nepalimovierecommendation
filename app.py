@@ -96,7 +96,7 @@ try:
         
         with col1:
             selected_movie = st.selectbox(
-                " Select a movie to get recommendations:",
+                "",
                 options=sorted(all_titles),
                 key="movie_selector"
             )
