@@ -94,18 +94,7 @@ with st.sidebar:
     4. **Ranking**: Returns top similar movies
     """)
     
-    st.divider()
     
-    st.header("⚙️ Configuration")
-    num_recommendations = st.slider(
-        "Number of Recommendations",
-        min_value=1,
-        max_value=20,
-        value=10,
-        step=1
-    )
-    
-    st.divider()
     
     st.header("ℹ️ Statistics")
     try:
@@ -203,6 +192,20 @@ try:
                 
                 if movie.get("video_url"):
                     st.markdown(f"[▶️ Watch Movie]({movie['video_url']}) 🎥")
+        st.divider()
+    
+        st.header("⚙️ Configuration")
+        num_recommendations = st.slider(
+        "Number of Recommendations",
+        min_value=1,
+        max_value=20,
+        value=10,
+        step=1
+        )
+    
+        st.divider()
+
+
         
         # Display recommendations
         if st.session_state.recommendations:
