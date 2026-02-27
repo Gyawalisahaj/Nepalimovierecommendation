@@ -104,7 +104,7 @@ try:
         with col2:
             search_button = st.button(
                 " Search" \
-                "        ",
+                "🔍",
                 use_container_width=True,
                 type="primary",
                 key="search_btn"
