@@ -100,17 +100,7 @@ try:
             )
         
         st.divider()
-        
-        st.header("⚙️ Configuration")
-        num_recommendations = st.slider(
-        "Number of Recommendations",
-        min_value=1,
-        max_value=20,
-        value=10,
-        step=1
-        )
-    
-        st.divider()
+
         
         # Get recommendations
         if search_button or selected_movie != st.session_state.selected_movie:
@@ -120,7 +110,7 @@ try:
                 try:
                     response = requests.get(
                         f"{API_BASE_URL}/recommend/",
-                        params={"movie": selected_movie, "limit": num_recommendations},
+                        params={"movie": selected_movie, "limit": 10},
                         timeout=15
                     )
                     response.raise_for_status()
