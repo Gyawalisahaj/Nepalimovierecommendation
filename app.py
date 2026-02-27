@@ -253,10 +253,6 @@ with st.container():
     st.divider()
 
     st.markdown(
-        "<center>🚀 Built with Machine Learning, FastAPI, and Streamlit</center>",
+        "<center>MovieFlix** © 2026 | A ML Project by Sahaj Gyawali | [GitHub](https://github.com/Gyawalisahaj/Nepalimovierecommendation)</center>",
         unsafe_allow_html=True
     )
-st.markdown("""
----
-**MovieFlix** © 2026 | A ML Project by Sahaj Gyawali | [GitHub](https://github.com/Gyawalisahaj/Nepalimovierecommendation)
-""")
