@@ -103,6 +103,7 @@ try:
         
         with col2:
             search_button = st.button(
+                " "
                 " Search" \
                 "🔍",
                 use_container_width=True,
@@ -167,8 +168,6 @@ try:
                 with st.expander("🎭 Cast"):
                     st.write(movie.get("cast", "N/A"))
                 
-                if movie.get("video_url"):
-                    st.markdown(f"[▶️ Watch Movie]({movie['video_url']}) 🎥")
         st.divider()
 
 
@@ -205,13 +204,6 @@ try:
                         
                         with st.expander("🎭 Cast"):
                             st.caption(movie.get("cast", "N/A"))
-                        
-                        if movie.get("video_url"):
-                            st.markdown(
-                                f"[▶️ Watch]({movie['video_url']}) | "
-                                f"[More Info](https://www.imdb.com/search/title/)",
-                                unsafe_allow_html=False
-                            )
     else:
         st.warning("⚠️ No movies available in the database")
         
