@@ -219,43 +219,44 @@ except requests.exceptions.ConnectionError:
 except Exception as e:
     st.error(f"❌ Error: {str(e)}")
 
-# Footer
-with st.container() :
-    st.header("📊 About This Project")
-    st.markdown("""
-    **MovieFlix** is an intelligent movie recommendation system built with:
-    
-    - **Backend**: FastAPI + Python
-    - **Frontend**: Streamlit
-    - **ML Algorithm**: Content-Based Filtering
-    - **Features**: Genre, Cast, Director, Production House, Plot
-    
-    """)
-    
-    st.divider()
-    
-    st.header("🔬 How It Works")
-    st.markdown("""
-    1. **Data Processing**: Extracts movie features
-    2. **Vectorization**: Converts text to numerical vectors using TF-IDF
-    3. **Similarity**: Calculates cosine similarity between movies
-    4. **Ranking**: Returns top similar movies
-    """)
-
+# Footer - About the Project
 st.divider()
-with st.container():
-    col1, col2, col3 = st.columns(3)
-    with col1:
-        st.markdown("### 🛠️ Built With")
-        st.markdown("- FastAPI\n- Streamlit\n- scikit-learn\n- Pandas")
-    with col2:
-        st.markdown("### 💡 Algorithm")
-        st.markdown("- TF-IDF Vectorization\n- Cosine Similarity\n- Content-Based Filtering\n- ML Pipeline")
-    with col3:
-        st.markdown("### 📚 Features")
-        st.markdown("- 500+ Movies\n- Genre Analysis\n- Cast Information\n- Plot Similarity\n- Production Data")
 
+with st.container():
+    st.header("📽️ About the Project")
+    st.markdown("""
+    **MovieFlix** is a professional, full-stack **content-based movie recommendation system**
+    developed using a **FastAPI backend** and a **Streamlit frontend**.  
+    The system intelligently recommends movies by analyzing **genre, cast, director,
+    production house, and plot**.
+    """)
+
+    st.markdown("### ✨ Highlights")
+    st.markdown("""
+    - Uses content-based filtering for personalized recommendations  
+    - Implements TF-IDF vectorization and cosine similarity  
+    - Interactive and responsive Streamlit web interface  
+    - FastAPI-powered backend for real-time results  
+    - No authentication required for instant access  
+    - Smart movie search with full dataset coverage  
+    - Jupyter Notebook documentation explaining the ML workflow  
+    """)
+
+    st.markdown("### 🔍 Recommendation Logic")
+    st.markdown("""
+    - Extracts important movie features  
+    - Converts textual data into numerical vectors  
+    - Computes similarity scores between movies  
+    - Ranks and returns the most relevant recommendations  
+    """)
+
+    st.divider()
+
+    st.markdown(
+        "<center>🚀 Built with Machine Learning, FastAPI, and Streamlit</center>",
+        unsafe_allow_html=True
+    )
 st.markdown("""
 ---
-**MovieFlix** © 2026 | A ML Project by Sahaj Gyawali | [GitHub](https://github.com/sahajgyawali45)
+**MovieFlix** © 2026 | A ML Project by Sahaj Gyawali | [GitHub](https://github.com/Gyawalisahaj/Nepalimovierecommendation)
 """)
