@@ -71,6 +71,16 @@ with col2:
 
 st.divider()
 
+st.header("ℹ️ Statistics")
+try:
+    response = requests.get(f"{API_BASE_URL}/health", timeout=5)
+    if response.status_code == 200:
+        st.success("✅ Backend API Connected")
+    else:
+        st.error("❌ Backend Error")
+except:
+    st.error("❌ Backend Not Available")
+
 # Main content
 st.header("🔍 Find Your Next Favorite Movie")
 
@@ -231,18 +241,6 @@ with st.container() :
     3. **Similarity**: Calculates cosine similarity between movies
     4. **Ranking**: Returns top similar movies
     """)
-    
-    
-    
-    st.header("ℹ️ Statistics")
-    try:
-        response = requests.get(f"{API_BASE_URL}/health", timeout=5)
-        if response.status_code == 200:
-            st.success("✅ Backend API Connected")
-        else:
-            st.error("❌ Backend Error")
-    except:
-        st.error("❌ Backend Not Available")
 
 st.divider()
 with st.container():
@@ -259,5 +257,5 @@ with st.container():
 
 st.markdown("""
 ---
-**MovieFlix** © 2026 | A Professional ML Project for Placement
+**MovieFlix** © 2026 | A ML Project by Sahaj Gyawali | [GitHub](https://github.com/sahajgyawali45)
 """)
