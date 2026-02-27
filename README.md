@@ -24,7 +24,6 @@ recommendation/
 │   ├── main.py                # Application setup & CORS
 │   ├── recommendation.py      # ML engine & endpoints
 │   ├── models.py              # SQLAlchemy ORM models
-│   ├── database.py            # DB configuration
 │   ├── movies.csv             # Movie dataset (500+ titles)
 │   ├── requirements.txt       # Python dependencies
 │   └── venv/                  # Virtual environment
@@ -35,8 +34,6 @@ recommendation/
 │
 ├── screenshot/                # Project screenshots
 │
-├── BACKEND_API.md             # Backend API documentation
-├── SETUP_COMPLETE.md          # Setup guide
 └── README.md                  # This file
 ```
 
@@ -193,34 +190,6 @@ Similarity Scores:
 - Data source: Movie CSV file
 - Pre-processed and cleaned for ML
 
----
-
-## 🛠️ API Endpoints
-
-### Health Check
-```bash
-GET http://127.0.0.1:8000/health
-```
-Response:
-```json
-{
-  "status": "healthy",
-  "service": "Movie Recommendation Engine",
-  "version": "1.0.0"
-}
-```
-
-### Get All Movie Titles
-```bash
-GET http://127.0.0.1:8000/recommend/titles
-```
-
-### Get Recommendations
-```bash
-GET http://127.0.0.1:8000/recommend/?movie=Inception&limit=10
-```
-
-**Full API docs:** See [BACKEND_API.md](./BACKEND_API.md)
 
 ---
 
@@ -257,6 +226,12 @@ GET http://127.0.0.1:8000/recommend/?movie=Inception&limit=10
 ---
 
 ## 🚦 Startup Guide
+## create venv
+```bash
+python -m venv venv
+source venv/bin/activate
+pip install -r backend/requirements.txt
+```
 
 ### Terminal 1 - Start Backend
 
@@ -291,88 +266,4 @@ Navigate to: **http://localhost:8501**
 
 ---
 
-## 📊 Performance Benchmarks
-
-| Operation | Time |
-|-----------|------|
-| Backend startup | ~2 seconds |
-| ML model load | ~1 second |
-| Get recommendations | ~100ms |
-| API response | <50ms |
-| Streamlit load | ~3 seconds |
-| **Total startup** | **~6 seconds** |
-
----
-
-
-## 🐛 Troubleshooting
-
-### Backend Won't Start
-```bash
-# Port already in use?
-lsof -i :8000
-# Kill process:
-kill -9 <PID>
-
-# Or use different port:
-python -m uvicorn main:app --reload --port 8001
-```
-
-### Streamlit Connection Error
-```bash
-# Ensure backend is running first
-curl http://127.0.0.1:8000/health
-
-# Check if Streamlit can reach backend
-# Backend should respond with JSON
-```
-
-### Movies Not Loading
-```bash
-# Check movies.csv exists
-ls backend/movies.csv
-
-# Verify database initialization
-# Check backend logs for database errors
-```
-
-### Virtual Environment Issues
-```bash
-# Recreate venv
-rm -rf venv/
-python -m venv venv
-source venv/bin/activate
-pip install -r backend/requirements.txt
-```
-
----
-
-## 📚 Learning Resources
-
-### For ML Algorithm
-- See `ml/movierecommendation.ipynb` for detailed explanation
-- Includes TF-IDF vectorization walkthrough
-- Cosine similarity mathematics explained
-- Dataset visualization and analysis
-
-### For Backend Development
-- `BACKEND_API.md` – Complete API reference
-- FastAPI documentation: https://fastapi.tiangolo.com
-- SQLAlchemy ORM guide: https://www.sqlalchemy.org
-
-### For Frontend Development
-- Streamlit documentation: https://docs.streamlit.io
-- Python requests library: https://requests.readthedocs.io
-
----
-
-## 🎬 Project Screenshots
-
-All screenshots located in `./screenshot/` directory:
-- `recommendation1.png` – Main interface
-- `recommendation2.png` – Recommendations display
-- `recommendatin2.png` – Additional view
-- `recommended_model.png` – ML model architecture
-
----
 

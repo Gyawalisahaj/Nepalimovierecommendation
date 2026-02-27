@@ -71,41 +71,6 @@ with col2:
 
 st.divider()
 
-# Sidebar - Information
-with st.sidebar:
-    st.header("📊 About This Project")
-    st.markdown("""
-    **MovieFlix** is an intelligent movie recommendation system built with:
-    
-    - **Backend**: FastAPI + Python
-    - **Frontend**: Streamlit
-    - **ML Algorithm**: Content-Based Filtering
-    - **Features**: Genre, Cast, Director, Production House, Plot
-    
-    """)
-    
-    st.divider()
-    
-    st.header("🔬 How It Works")
-    st.markdown("""
-    1. **Data Processing**: Extracts movie features
-    2. **Vectorization**: Converts text to numerical vectors using TF-IDF
-    3. **Similarity**: Calculates cosine similarity between movies
-    4. **Ranking**: Returns top similar movies
-    """)
-    
-    
-    
-    st.header("ℹ️ Statistics")
-    try:
-        response = requests.get(f"{API_BASE_URL}/health", timeout=5)
-        if response.status_code == 200:
-            st.success("✅ Backend API Connected")
-        else:
-            st.error("❌ Backend Error")
-    except:
-        st.error("❌ Backend Not Available")
-
 # Main content
 st.header("🔍 Find Your Next Favorite Movie")
 
@@ -255,6 +220,40 @@ except Exception as e:
     st.error(f"❌ Error: {str(e)}")
 
 # Footer
+with st.container() :
+    st.header("📊 About This Project")
+    st.markdown("""
+    **MovieFlix** is an intelligent movie recommendation system built with:
+    
+    - **Backend**: FastAPI + Python
+    - **Frontend**: Streamlit
+    - **ML Algorithm**: Content-Based Filtering
+    - **Features**: Genre, Cast, Director, Production House, Plot
+    
+    """)
+    
+    st.divider()
+    
+    st.header("🔬 How It Works")
+    st.markdown("""
+    1. **Data Processing**: Extracts movie features
+    2. **Vectorization**: Converts text to numerical vectors using TF-IDF
+    3. **Similarity**: Calculates cosine similarity between movies
+    4. **Ranking**: Returns top similar movies
+    """)
+    
+    
+    
+    st.header("ℹ️ Statistics")
+    try:
+        response = requests.get(f"{API_BASE_URL}/health", timeout=5)
+        if response.status_code == 200:
+            st.success("✅ Backend API Connected")
+        else:
+            st.error("❌ Backend Error")
+    except:
+        st.error("❌ Backend Not Available")
+
 st.divider()
 with st.container():
     col1, col2, col3 = st.columns(3)
